@@ -1,20 +1,59 @@
-body{
-    background-color: #8e809c;
-    color: #c3c8e3 ;
-    }
-/* Card Styles */
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    width: 100%; /* Default full width on smaller screens */
-    max-width: 300px; /* Max width for cards */
-    margin: 10px;
-    border-radius: 8px;
-    background-color: rgb(255, 255, 255);
-    padding: 15px;
-    text-align: center;
+/* Set the background of the entire page to red */
+body {
+    background-color: red; /* Red background */
+    color: #fff; /* Set text color to white for contrast */
+    font-family: Arial, sans-serif; /* Optional: Define a font */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flex to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
 }
 
+/* Card Styles */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Regular card shadow */
+    transition: 0.3s;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #fff; /* Card background is white */
+    padding: 15px;
+    text-align: center;
+    width: 100%; /* Cards take up full width of their column */
+    max-width: 280px; /* Set a max width for the card */
+    border: 4px solid #f0e68c; /* Cream color border */
+    position: relative;
+}
+
+/* Christmas light glow effect on cards */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 12px;
+    background-image: radial-gradient(circle, rgba(235, 156, 156, 0.8), rgba(174, 226, 174, 0.8), rgba(174, 174, 236, 0.8)); 
+    animation: glow 1.5s ease-in-out infinite; /* Glow animation */
+    z-index: -1;
+}
+
+/* Animation for the Christmas light glow effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+    }
+    50% {
+        box-shadow:  0 0 25px 10px rgba(0, 255, 0, 0.9);
+    }
+    100% {
+        box-shadow:  0 0 15px 5px rgba(0, 0, 255, 0.7);
+    }
+}
+
+/* Hover effect on cards */
 .card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px); /* Adds a slight lift effect */
@@ -22,39 +61,65 @@ body{
 
 /* Container for the cards */
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center align cards */
+    display: grid; /* Use grid to layout the cards */
+    grid-template-columns: repeat(3, 1fr); /* Always 3 cards per row */
+    gap: 20px;  /* Space between the cards */
     padding: 20px;
+    justify-items: center; /* Center align cards within the grid */
+    width: 100%; /* Ensure the container spans the full width */
+    max-width: 1000px; /* Limit the container width */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Text styling inside the cards */
 .card h3 {
     font-size: 20px;
     margin: 10px 0;
-    color: #333;
+    color: #333; /* Dark text for the title */
 }
 
 .card p {
     font-size: 16px;
     margin: 5px 0;
-    color: #666;
+    color: #666; /* Slightly lighter text for the paragraph */
 }
 
 .card p.age {
     font-weight: bold;
 }
 
-/* Responsive layout for medium screens */
-@media (max-width: 768px) {
+/* Responsive layout for medium screens (e.g., tablets) */
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+    }
+
     .card {
-        width: 45%; /* 2 cards per row on medium screens */
+        width: 100%; /* Cards will fit within their columns */
+        max-width: 280px; /* Limit card size */
     }
 }
 
-/* Responsive layout for small screens */
-@media (max-width: 480px) {
+/* Responsive layout for small screens (e.g., phones) */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on small screens */
+    }
+
     .card {
-        width: 90%; /* 1 card per row on small screens */
+        width: 100%; /* Ensure cards fit properly in each row */
+        max-width: 250px; /* Set a max width for the card on small screens */
+    }
+}
+
+/* Responsive layout for very small screens (e.g., very small phones) */
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on extra small screens */
+    }
+
+    .card {
+        width: 100%; /* Ensure cards fit properly */
+        max-width: 220px; /* Adjust card size for very small screens */
     }
 }
