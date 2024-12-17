@@ -1,0 +1,60 @@
+body{
+    background-color: #8e809c;
+    color: #c3c8e3 ;
+    }
+/* Card Styles */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%; /* Default full width on smaller screens */
+    max-width: 300px; /* Max width for cards */
+    margin: 10px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Adds a slight lift effect */
+}
+
+/* Container for the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align cards */
+    padding: 20px;
+}
+
+/* Text styling inside the cards */
+.card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #666;
+}
+
+.card p.age {
+    font-weight: bold;
+}
+
+/* Responsive layout for medium screens */
+@media (max-width: 768px) {
+    .card {
+        width: 45%; /* 2 cards per row on medium screens */
+    }
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 480px) {
+    .card {
+        width: 90%; /* 1 card per row on small screens */
+    }
+}
