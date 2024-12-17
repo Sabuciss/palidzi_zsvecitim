@@ -1,6 +1,6 @@
 /* Set the background of the entire page to red */
 body {
-    background-color: red; /* Red background */
+    background-color: rgb(206, 157, 157); /* Red background */
     color: #fff; /* Set text color to white for contrast */
     font-family: Arial, sans-serif; /* Optional: Define a font */
     margin: 0;
@@ -35,7 +35,7 @@ body {
     right: -8px;
     bottom: -8px;
     border-radius: 12px;
-    background-image: radial-gradient(circle, rgba(235, 156, 156, 0.8), rgba(174, 226, 174, 0.8), rgba(174, 174, 236, 0.8)); 
+    background-image: radial-gradient(circle, rgba(218, 22, 22, 0.8), rgba(174, 226, 174, 0.8), rgba(174, 174, 236, 0.8)); 
     animation: glow 1.5s ease-in-out infinite; /* Glow animation */
     z-index: -1;
 }
@@ -49,7 +49,7 @@ body {
         box-shadow:  0 0 25px 10px rgba(0, 255, 0, 0.9);
     }
     100% {
-        box-shadow:  0 0 15px 5px rgba(0, 0, 255, 0.7);
+        box-shadow:  0 0 15px 5px rgba(99, 99, 160, 0.7);
     }
 }
 
@@ -122,4 +122,8 @@ body {
         width: 100%; /* Ensure cards fit properly */
         max-width: 220px; /* Adjust card size for very small screens */
     }
+}
+.highlighted-gift {
+    font-weight: bold;
+    color: red;
 }
